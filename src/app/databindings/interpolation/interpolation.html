@@ -1,1 +1,19 @@
-<p>interpolation works!</p>
+
+<h2>{{ title }}</h2>
+
+<p>{{ getWelcomeMessage() }}</p>
+
+<p>User Name: {{ user.name }}</p>
+<p>User Role: {{ user.details.role }}</p>
+
+<ul>
+  <li *ngFor="let skill of skills">{{ skill }}</li>
+</ul>
+
+<select [(ngModel)]="selectedCountryId">
+  <option *ngFor="let c of countries" [value]="c.id">{{ c.name }}</option>
+</select>
+
+<p>Selected Country ID: {{ selectedCountryId }}</p>
+
+<pre>{{ user | json }}</pre>
