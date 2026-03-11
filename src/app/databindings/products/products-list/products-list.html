@@ -1,0 +1,41 @@
+<h2>Products List</h2>
+
+<table border="1" cellpadding="8">
+
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    @for (product of products; track product.id) {
+
+      <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>${{ product.price }}</td>
+        <td>{{ product.stock }}</td>
+
+        <td>
+          <button (click)="viewProductDetails(product)">
+            View
+          </button>
+        </td>
+
+      </tr>
+
+    }
+
+  </tbody>
+
+</table>
+
+<router-outlet></router-outlet>

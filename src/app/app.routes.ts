@@ -9,6 +9,8 @@ import { Property } from './databindings/property/property';
 import { Style } from './databindings/style/style';
 import { TwoWay } from './databindings/two-way/two-way';
 import { ProductsComponent } from './databindings/products/products';
+import { ProductsList } from './databindings/products/products-list/products-list';
+import { ProductDetails } from './databindings/products/product-details/product-details';
 
 export const routes: Routes = [
     { path: 'home', component: Home },
@@ -20,6 +22,23 @@ export const routes: Routes = [
     { path: 'property', component: Property },
     { path: 'style', component: Style },
     { path: 'two-way', component: TwoWay },
-    { path: 'products', component: ProductsComponent}
+    { path: 'products', component: ProductsComponent},
+
+    { path: 'PRODUCTS',component: ProductsList,children: [{
+        path: ':id',
+        children: [
+          { path: 'Details', component: ProductDetails }
+        ]
+      }
+    ]
+  },
+
+ 
+
+  { path: '', redirectTo: '/Home', pathMatch: 'full' },
+
+
+  { path: '**', redirectTo: '/Home' }
+
 
 ];

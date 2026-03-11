@@ -1,0 +1,28 @@
+@if (showModal) {
+    <div class="modal-overlay" (click)="closeModal()">
+      
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        
+        <button class="close-btn" (click)="closeModal()">X</button>
+  
+        @if (selectedProduct) {
+  
+          <h2>Product Details</h2>
+  
+          <p><strong>ID:</strong> {{ selectedProduct.id }}</p>
+          <p><strong>Name:</strong> {{ selectedProduct.name }}</p>
+          <p><strong>Category:</strong> {{ selectedProduct.category }}</p>
+          <p><strong>Price:</strong> ${{ selectedProduct.price }}</p>
+          <p><strong>Stock:</strong> {{ selectedProduct.stock }}</p>
+          <p><strong>Status:</strong> {{ selectedProduct.status }}</p>
+          <p><strong>Description:</strong> {{ selectedProduct.description }}</p>
+          <p><strong>Brand:</strong> {{ selectedProduct.brand }}</p>
+          <p><strong>Rating:</strong> {{ selectedProduct.rating }}</p>
+          <p><strong>Created Date:</strong> {{ selectedProduct.createdDate }}</p>
+  
+        }
+  
+      </div>
+  
+    </div>
+  }
