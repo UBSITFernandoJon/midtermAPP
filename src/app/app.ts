@@ -11,3 +11,13 @@ import { Navi } from './components/navi/navi';
 export class App {
   protected readonly title = signal('MidtermsProject');
 }
+export interface Supplier {
+  id: number;
+  supplierName: string;
+  location: string;
+  email: string;
+  contactPerson: string;
+  phone: string;
+  productsSupplied: string[];
+  isActive?: boolean;
+}
